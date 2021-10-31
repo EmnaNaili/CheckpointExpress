@@ -7,17 +7,6 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var d = new Date();
-var hour = d.getHours();
-var day = d.getDay();
-
-
-const workTime = function (req, res, next) {
-if (hour > 9 && hour < 17 && day > 0 && day < 6) {
-next();
-}else{
-  res.render('error');  }
-}
 
 var app = express();
 
@@ -32,6 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var server = app.listen(process.env.PORT || 4000, () => {
+
   console.log('Server is started on localhost:'+ (process.env.PORT || 4000))
 })
 app.use('/', indexRouter);
