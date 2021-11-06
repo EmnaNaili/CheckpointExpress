@@ -12,7 +12,7 @@ if (hour > 9 && hour < 17 && day > 0 && day < 6) {
     res.render('home');
 
   }else{
-  res.render('error',{error :{status : "we are closed !"}}); 
+  res.render('error',{error :{status : "we are closed ! Working hours: From Monday to Friday 9am to 5pm"}}); 
  }
 
 
